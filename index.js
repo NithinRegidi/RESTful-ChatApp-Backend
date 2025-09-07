@@ -102,6 +102,18 @@ app.put("/chats/:id", async (req, res) =>{
     }
 })
 
+// Delete Route
+app.delete("/chats/:id", async (req, res) => {
+    try {
+        let { id } = req.params;
+        await chat.findByIdAndDelete(id);
+        res.redirect("/chats");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Error deleting chat");
+    }
+});
+
 // App is running
 app.listen(port, () => {
     console.log("Server is running");

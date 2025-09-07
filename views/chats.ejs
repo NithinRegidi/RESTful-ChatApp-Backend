@@ -46,21 +46,30 @@
         .button {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #28a745;
-            color: white;
             text-decoration: none;
             border-radius: 5px;
             font-size: 14px;
             transition: background-color 0.3s ease;
         }
-        .button:hover {
-            background-color: #218838;
+        .button.edit {
+            background-color: #007bff;
+            color: white;
+        }
+        .button.edit:hover {
+            background-color: #0056b3;
+        }
+        .button.delete {
+            background-color: #dc3545;
+            color: white;
+        }
+        .button.delete:hover {
+            background-color: #c82333;
         }
         .back-button {
             display: block;
             margin: 20px auto;
             padding: 10px 20px;
-            background-color: #007bff;
+            background-color: #0056b3;
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -70,7 +79,7 @@
             transition: background-color 0.3s ease;
         }
         .back-button:hover {
-            background-color: #0056b3;
+            background-color: rgb(0, 140, 248);
         }
     </style>
 </head>
@@ -86,7 +95,10 @@
                     <small>Created At: <%= chat.created_at.toLocaleString() %></small>
                 </div>
                 <div>
-                    <a class="button" href="http://localhost:5000/chats/<%= chat._id %>/edit">Edit</a>
+                    <a class="button edit" href="http://localhost:5000/chats/<%= chat._id %>/edit">Edit</a>
+                    <form action="/chats/<%= chat._id %>?_method=DELETE" method="post" style="display: inline;">
+                        <button class="button delete" type="submit">Delete</button>
+                    </form>
                 </div>
             </li>
         <% }) %>
