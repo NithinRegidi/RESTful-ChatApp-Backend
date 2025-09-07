@@ -111,8 +111,4 @@ MongoChat/
 - **Mongoose**: ODM library for MongoDB.
 - **EJS**: Templating engine for rendering dynamic HTML.
 
----
 
-## License
-
-This project is licensed under the MIT License.
