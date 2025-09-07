@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Chats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin: 10px auto;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+        }
+        h4 {
+            margin: 5px 0;
+            color: #555;
+        }
+        p {
+            margin: 10px 0;
+            color: #333;
+        }
+        small {
+            display: block;
+            margin-top: 10px;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Chats</h1>
+    <ul>
+        <% chats.forEach(chat => { %>
+            <li>
+                <h4>From: <%= chat.from %></h4>
+                <h4>To: <%= chat.to %></h4>
+                <p>Message: <%= chat.msg %></p>
+                <small>Created At: <%= chat.created_at.toLocaleString() %></small>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

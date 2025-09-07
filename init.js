@@ -1,13 +1,4 @@
 
-// Mongoose
-const mongoose = require('mongoose');
-main()
-.then(() => { console.log(" Connected to MongoDB ") })
-.catch(err => console.log(err));
-async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/chitchat');
-}
-
 const chat = require("./models/chat");
 
 // Array of chat data
