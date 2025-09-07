@@ -26,6 +26,9 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             max-width: 600px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         h4 {
             margin: 5px 0;
@@ -39,6 +42,19 @@
             display: block;
             margin-top: 10px;
             color: #888;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #218838;
         }
         .back-button {
             display: block;
@@ -63,10 +79,15 @@
     <ul>
         <% chats.forEach(chat => { %>
             <li>
-                <h4>From: <%= chat.from %></h4>
-                <h4>To: <%= chat.to %></h4>
-                <p>Message: <%= chat.msg %></p>
-                <small>Created At: <%= chat.created_at.toLocaleString() %></small>
+                <div>
+                    <h4>From: <%= chat.from %></h4>
+                    <h4>To: <%= chat.to %></h4>
+                    <p>Message: <%= chat.msg %></p>
+                    <small>Created At: <%= chat.created_at.toLocaleString() %></small>
+                </div>
+                <div>
+                    <a class="button" href="http://localhost:5000/chats/<%= chat._id %>/edit">Edit</a>
+                </div>
             </li>
         <% }) %>
     </ul>
