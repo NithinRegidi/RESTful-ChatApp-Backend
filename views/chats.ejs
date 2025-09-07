@@ -40,6 +40,22 @@
             margin-top: 10px;
             color: #888;
         }
+        .back-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            max-width: 200px;
+            transition: background-color 0.3s ease;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -54,5 +70,6 @@
             </li>
         <% }) %>
     </ul>
+    <a href="/main" class="back-button">Go Back</a>
 </body>
 </html>
